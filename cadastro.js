@@ -3,32 +3,138 @@ var readline = require("readline-sync");
 var opcao;
 exports.opcao = opcao;
 
-var gar
+var cod;
+exports.cod = cod;
 
-do {
-opcao = readline.questionInt("Digite um número válido: \n 1: cadastrar cliente \n 2: excluir cliente \n 3: visualizar cliente \n\n ")
+var login;
+
+var opcao2
+
+var senha;
+
+var tent = 3;
+
+login = readline.question("Login: \n")
+while (login != "admin")
+{
+ console.log("Login inválido, tente novamente: ");
+ login = readline.question("")
 }
-while(opcao != 1 && opcao != 2 && opcao != 3 );
-var readline = require("readline-sync");
 
-switch (opcao) {
-    case 1:
-        cpf = readline.question("Digite o cpf do cliente: \n\n");
 
-        do {
-            if (cpf == "12345678910") /* trocar essa condição pra ver se consta no sistema, usando SQL (lembrar de converter de numero do SGBD pra string aqui no codigo)*/
-            {
-                cpf = readline.question("Este cpf já está cadastrado em nosso sistema, tente novamente! \n");
-            }
-    
-            else if (cpf.length != 11)
-            {
-                cpf = readline.question("Este número de cpf é inválido!, tente novamente! \n\n")
-            }
-        }
-        while ( cpf.length != 11 || cpf == "12345678910" /* trocar essa condição pra ver se consta no sistema, usando SQL*/ )
-        
-        /* comando que envia o número do cpf para a tabela*/
-        console.log("Cliente cadastrado com sucesso!")
+senha = readline.question("Senha: \n")
+while (senha != "admin")
+{
+if (tent<=0)
+ {
+console.log("Tente novamente com outro usuário!")
+process.exit()
+ }
+else
+ {
+console.log("Senha inválida! \nRestam " + tent + " tentativas");
+tent--
+senha = readline.question("")
+ }
+console.log(" ")
+}
 
+
+do 
+{
+    console.log("Escolha uma opção: ")
+    console.log("1- Menu de aluguel ")
+    console.log("2- Menu de quartos ")
+    console.log("3- Serviços gerais ");
+    console.log("4- Sair")
+    opcao = readline.questionInt()
+
+}
+while(opcao != 4 && opcao!=3 && opcao!=2 && opcao!=1)
+
+if (opcao == 4) {
+    console.log("Obrigado pela escolha!");
+    process.exit();
+}
+
+else {
+
+    switch (opcao) {
+        case 1:
+            console.log("Escolha uma opção: ");
+            console.log("1- Reservar quarto ");
+            console.log("2- Cancelar reserva ");
+            console.log("3- Modificar reserva ");
+            console.log("4- Voltar ao menu  ");
+            opcao2 = readline.question("");
+            
+            if (opcao2 == 1)
+{
+                cod = readline.question("Digite o código do quarto: \n")
+
+                if (cod == "123" || cod.length != 3) 
+                {
+
+                    do
+                    {
+                        if (cod == "123") /* trocar essa condição pra ver se consta no sistema, usando SQL (lembrar de converter de numero do SGBD pra string aqui no codigo)*/ 
+                            {
+                            cod = readline.question("Este quarto já está em uso, tente novamente! \n\n");
+                            }
+
+                        else if (cod.length != 3) 
+                            {
+                            cod = readline.question("Este número é inválido, tente novamente! \n\n");
+                            }
+                    }
+                while (cod.length != 3 || cod == "123"); /**/
+                /* comando que efetua o cadastro*/
+                console.log("Reserva feita com sucesso!");
+                break;
+                }
+}
+                else if (opcao2 == 2) 
+{
+            cod = readline.question("Digite o código do quarto \n")
+               do
+                    {
+                        if (cod == "123") /* trocar essa condição pra ver se NÃO consta no sistema, usando SQL (lembrar de converter de numero do SGBD pra string aqui no codigo)*/ 
+                            {
+                            cod = readline.question("Este não está reservado! tente novamente \n\n");
+                            }
+
+                        else if (cod.length != 3) 
+                            {
+                            cod = readline.question("Este número é inválido, tente novamente! \n\n");
+                            }
+                    }
+                while (cod.length != 3 || cod == "123");  
+                 /* comando remove em sql*/
+                 console.log("Reserva cancelada com sucesso!");
+                 break;
+}
+                else if (cod == 3)
+                {
+
+                }
+
+        case 2:
+            break;
+
+        case 3:
+            break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
