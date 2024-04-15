@@ -22,7 +22,7 @@ while (login != "admin")
 }
 
 
-senha = readline.question("Senha: \n")
+senha = readline.question("Senha: \n" , {hideEchoBack: true });
 while (senha != "admin")
 {
 if (tent<=0)
