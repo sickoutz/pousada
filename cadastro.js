@@ -40,6 +40,7 @@ console.log(" ")
 }
 
 
+ 
 do 
 {
     console.log("Escolha uma opção: ")
@@ -65,15 +66,13 @@ else {
             console.log("1- Reservar quarto ");
             console.log("2- Cancelar reserva ");
             console.log("3- Modificar reserva ");
-            console.log("4- Voltar ao menu  ");
+            console.log("4- Sair  ");
             opcao2 = readline.question("");
             
             if (opcao2 == 1)
-{
-                cod = readline.question("Digite o código do quarto: \n")
 
-                if (cod == "123" || cod.length != 3) 
-                {
+{
+                cod = readline.question("Digite o código do quarto: \n");
 
                     do
                     {
@@ -91,19 +90,19 @@ else {
                 /* comando que efetua o cadastro*/
                 console.log("Reserva feita com sucesso!");
                 break;
-                }
 }
+
                 else if (opcao2 == 2) 
 {
-            cod = readline.question("Digite o código do quarto \n")
+            cod = readline.question("Digite o código do quarto \n");
                do
                     {
                         if (cod == "123") /* trocar essa condição pra ver se NÃO consta no sistema, usando SQL (lembrar de converter de numero do SGBD pra string aqui no codigo)*/ 
                             {
-                            cod = readline.question("Este não está reservado! tente novamente \n\n");
+                            cod = readline.question("Este quarto não está reservado! tente novamente \n\n");
                             }
 
-                        else if (cod.length != 3) 
+                        else if (cod.length != 3)
                             {
                             cod = readline.question("Este número é inválido, tente novamente! \n\n");
                             }
@@ -113,17 +112,41 @@ else {
                  console.log("Reserva cancelada com sucesso!");
                  break;
 }
-                else if (cod == 3)
-                {
-
-                }
+                else if (opcao2 == 3)
+{
+                    cod = readline.question("Digite o código do quarto para modificar a reserva: \n");
+                    do
+                         {
+                            if (cod == "123")
+                            {
+                                cod = readline.question("Este quarto não está reservado! tente novamente \n\n");
+                            }  
+                            
+                            
+                            else if (cod.length != 3) 
+                                 {
+                                 cod = readline.question("Este número é inválido, tente novamente! \n\n");
+                                 }
+                                 
+                         }
+                     while (cod.length != 3 || cod == "123");  
+                      /* comando update sql*/
+                      console.log("Reserva modificada com sucesso!");
+                      break;
+}
+                else if (opcao2 == 4)
+{
+                console.log("Obrigado pela escolha!");
+                process.exit();
+}
+                
 
         case 2:
             break;
 
         case 3:
             break;
-
+    }
 
 
 
@@ -137,4 +160,5 @@ else {
 
 
     }
-}
+
+
