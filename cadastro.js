@@ -14,40 +14,54 @@ var senha;
 
 var tent = 3;
 
-login = readline.question("Login: \n")
+console.log("===========================================================");
+console.log("|                         Login                           |");
+console.log("===========================================================");
+console.log("|                                                         |");
+login = readline.question("                       Login: ")
+
+
+
 while (login != "admin")
 {
  console.log("Login inválido, tente novamente: ");
- login = readline.question("")
+ login = readline.question("                       Login: ");
 }
 
 
-senha = readline.question("Senha: \n" , {hideEchoBack: true });
+senha = readline.question("                       Senha: ", {hideEchoBack: true });
 while (senha != "admin")
 {
 if (tent<=0)
  {
 console.log("Tente novamente com outro usuário!")
+console.log("|                                                         |");
+console.log("===========================================================");
 process.exit()
  }
 else
  {
 console.log("Senha inválida! \nRestam " + tent + " tentativas");
+
 tent--
-senha = readline.question("")
+senha = readline.question("                       Senha: ");
+
  }
-console.log(" ")
 }
 
-
+console.log("|                                                         |");
+console.log("===========================================================");
  
 do 
 {
-    console.log("Escolha uma opção: ")
-    console.log("1- Menu de aluguel ")
-    console.log("2- Menu de quartos ")
-    console.log("3- Serviços gerais ");
-    console.log("4- Sair")
+console.log("===========================================================");
+console.log("|                   Menu Principal                        |");
+console.log("===========================================================");
+console.log("|                  1-  Aluguel                            |");
+console.log("|                  2-  Quartos                            |");
+console.log("|                  3-  Serviços                           |");
+console.log("|                  4-  Sair                               |");
+console.log("===========================================================");
     opcao = readline.questionInt()
 
 }
@@ -62,54 +76,87 @@ else {
 
     switch (opcao) {
         case 1:
-            console.log("Escolha uma opção: ");
-            console.log("1- Reservar quarto ");
-            console.log("2- Cancelar reserva ");
-            console.log("3- Modificar reserva ");
-            console.log("4- Sair  ");
+console.log("===========================================================");
+console.log("|                        Aluguel                          |");
+console.log("===========================================================");
+console.log("|                1- Aluguel de Quartos                    |");
+console.log("|                2- Disponibilidade de Quarto             |");
+console.log("|                3- Cancelar Quarto                       |");
+console.log("|                4- Retornar ao Menu Principal            |");
+console.log("===========================================================");
             opcao2 = readline.question("");
             
             if (opcao2 == 1)
 
 {
-                cod = readline.question("Digite o código do quarto: \n");
+    console.log("===========================================================");
+    console.log("|                                                         |");
+
+    cod = readline.question("|              Digite o código do quarto: ");
 
                     do
                     {
                         if (cod == "123") /* trocar essa condição pra ver se consta no sistema, usando SQL (lembrar de converter de numero do SGBD pra string aqui no codigo)*/ 
                             {
-                            cod = readline.question("Este quarto já está em uso, tente novamente! \n\n");
+                            cod = readline.question("|              já está em uso, tente novamente!: ");
+                            
                             }
 
                         else if (cod.length != 3) 
                             {
                             cod = readline.question("Este número é inválido, tente novamente! \n\n");
+                            console.log("|                                                         |");
+console.log("===========================================================");
                             }
                     }
                 while (cod.length != 3 || cod == "123"); /**/
                 /* comando que efetua o cadastro*/
-                console.log("Reserva feita com sucesso!");
+               
+              
+                console.log("|                                                         |");
+                console.log("===========================================================");
+                console.log("|                                                         |");
+                console.log("|              Reserva feita com sucesso!                 |");
+                console.log("|                                                         |");
+                console.log("|                                                         |");
+                console.log("===========================================================");
                 break;
 }
 
                 else if (opcao2 == 2) 
 {
-            cod = readline.question("Digite o código do quarto \n");
+    console.log("===========================================================");
+    console.log("|                                                         |");
+
+    cod = readline.question("|              Digite o código do quarto: ");
                do
                     {
                         if (cod == "123") /* trocar essa condição pra ver se NÃO consta no sistema, usando SQL (lembrar de converter de numero do SGBD pra string aqui no codigo)*/ 
                             {
-                            cod = readline.question("Este quarto não está reservado! tente novamente \n\n");
+                                cod = readline.question("|              não está em uso, tente novamente!: ");
+                            
                             }
 
                         else if (cod.length != 3)
                             {
-                            cod = readline.question("Este número é inválido, tente novamente! \n\n");
+                                cod = readline.question("Este número é inválido, tente novamente! \n\n");
+                                console.log("|                                                         |");
+    console.log("===========================================================");
                             }
+                        else 
+                            {
+                console.log("|                                                         |");
+                            } 
                     }
                 while (cod.length != 3 || cod == "123");  
                  /* comando remove em sql*/
-                 console.log("Reserva cancelada com sucesso!");
+                console.log("|                                                         |");
+                console.log("===========================================================");
+                console.log("|                                                         |");
+                console.log("|            Reserva CANCELADA com sucesso!               |");
+                console.log("|                                                         |");
+                console.log("|                                                         |");
+                console.log("===========================================================");
                  break;
 }
                 else if (opcao2 == 3)
@@ -160,5 +207,3 @@ else {
 
 
     }
-
-
