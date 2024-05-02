@@ -93,25 +93,24 @@ function menuAluguel(opcao2, cod)
 let flag = false
 opcao2 = 0
 let thigas 
-while (flag == false){
+while (flag == false)
+{
     switch (opcao2)
     {
-    case 0:
-        console.clear()
-        console.log("===========================================================")
-        console.log("|                        Aluguel                          |")
-        console.log("===========================================================")
-        console.log("|                1- Aluguel de Quartos                    |")
-        console.log("|                2- Cancelar reserva                      |")
-        console.log("|                3- Modificar reserva                     |")
-        console.log("|                4- Retornar ao Menu Principal            |")
-        console.log("===========================================================")
-        opcao2 = readline.questionInt()
-    
-        break
+                case 0:
+                console.clear()
+                console.log("===========================================================")
+                console.log("|                        Aluguel                          |")
+                console.log("===========================================================")
+                console.log("|                1- Aluguel de Quartos                    |")
+                console.log("|                2- Cancelar reserva                      |")
+                console.log("|                3- Modificar reserva                     |")
+                console.log("|                4- Retornar ao Menu Principal            |")
+                console.log("===========================================================")
+                opcao2 = readline.questionInt()
+                break
 
-    case 1:
-
+                case 1:
                 codigoCadastro(cod)             
                 console.clear()
                 console.log("===========================================================")
@@ -126,12 +125,9 @@ while (flag == false){
                 opcao2 = 0
                 break
                 
-    case 2:
-
+                case 2:
                 codigoCadastro(cod)
-
                 console.clear()
-
                 console.log("===========================================================")
                 console.log("|                        Sucesso!                         |")
                 console.log("===========================================================")
@@ -144,10 +140,8 @@ while (flag == false){
                 opcao2 = 0
                 break
 
-    case 3:
-
+                case 3:
                 codigoCadastro(cod)
-
                 console.clear()
                 console.log("===========================================================")
                 console.log("|                        Sucesso!                         |")
@@ -161,8 +155,7 @@ while (flag == false){
                 opcao2 = 0
                 break    
                       
-
-    case 4:
+                case 4:
                 flag = true
                 break
 }
