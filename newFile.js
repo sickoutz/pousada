@@ -163,91 +163,88 @@ while (flag == false)
 }
 
 
+
                 
 
-function menuQuartos (opcao2, cod)
+function menuQuartos (opcao2,  cod)
 {
-    let flag = false
-    opcao2 = 0
-    let thigas 
-    
-    
-    while (flag == false){
-            
-                       
+let flag = false
+opcao2 = 0
+let thigas 
+while (flag == false){                       
 switch (opcao2)
 {
-                            
                 case 0:
-                console.clear()
-                console.log("===========================================================")
-                console.log("|                        Quartos                          |")
-                console.log("===========================================================")
-                console.log("|                1- Tipos de quartos                      |")
-                console.log("|                2- Cadastrar quarto                      |")
-                console.log("|                3- Excluir quarto                        |")
-                console.log("|                4- Retornar ao Menu Principal            |")
-                console.log("===========================================================")
-                        opcao2 = readline.question("")      
+                    console.clear()
+                    console.log("===========================================================")
+                    console.log("|                        Quartos                          |")
+                    console.log("===========================================================")
+                    console.log("|                1- Tipos de quartos                      |")
+                    console.log("|                2- Cadastrar quarto                      |")
+                    console.log("|                3- Excluir quarto                        |")
+                    console.log("|                4- Retornar ao Menu Principal            |")
+                    console.log("===========================================================")
+                opcao2 = readline.questionInt("")
+                break
+
                 case 1:
-                console.clear(
-                )
+                codigoCadastro(cod)       
                 console.log("===========================================================")
                 console.log("|                        Quartos                          |")
                 console.log("===========================================================")
                 console.log("|                                                         |")
-                console.log("|                    Tipos de quarto                      |")
-                console.log("|                                                         |")
-                console.log("|                                                         |")
-                console.log("===========================================================")
-                thigas = readline.question("aperte enter para continuar...")
-                opcao2 = 0
-                            break 
-                        
-                case 2:                                       
-                codigoCadastro
-                console.clear()
-                console.log("===========================================================")
-                console.log("|                        Quartos                          |")
-                console.log("===========================================================")
-                console.log("|                                                         |")
-                console.log("|            Quarto cadastrado com sucesso!               |")
+                console.log("|                   Tipos de quarto...                    |")
                 console.log("|                                                         |")
                 console.log("|                                                         |")
                 console.log("===========================================================")
                 thigas = readline.question("aperte enter para continuar...")
                 opcao2 = 0
                 break
-                        
-
-                case 3: 
-                codigoCadastro
+                                                
+                case 2:
+                codigoCadastro(cod)
                 console.clear()
                 console.log("===========================================================")
                 console.log("|                        Quartos                          |")
                 console.log("===========================================================")
                 console.log("|                                                         |")
-                console.log("|             Quarto excluído com sucesso                 |")
+                console.log("|                   Quarto cadastrado                     |")
                 console.log("|                                                         |")
                 console.log("|                                                         |")
                 console.log("===========================================================")
                 thigas = readline.question("aperte enter para continuar...")
                 opcao2 = 0
-                break 
-        
-                case 4: 
+                break
+                
+                case 3:
+                codigoCadastro(cod)
+                console.clear()
+                console.log("===========================================================")
+                console.log("|                        Quartos                          |")
+                console.log("===========================================================")
+                console.log("|                                                         |")
+                console.log("|                    Quarto excluído                      |")
+                console.log("|                                                         |")
+                console.log("|                                                         |")
+                console.log("===========================================================")
+                thigas = readline.question("aperte enter para continuar...")
+                opcao2 = 0
+                break
+                           
+                                        
+                case 4:
                 flag = true
-                break
 }
 }
-}
+}                  
 
 
 
-function servicos (opcao2, cod){
-    let flag = false
-    opcao2 = 0
-    let thigas 
+function servicos (opcao2,  cod)
+{
+let flag = false
+opcao2 = 0
+let thigas 
 while (flag == false){                       
 switch (opcao2)
 {
@@ -262,9 +259,10 @@ switch (opcao2)
                 console.log("|                4- Retornar ao Menu Principal            |")
                 console.log("===========================================================")
                 opcao2 = readline.questionInt("")
+                break
 
                 case 1:
-                codigoCadastro         
+                codigoCadastro(cod)       
                 console.clear()
                 console.log("===========================================================")
                 console.log("|                        Serviços                         |")
@@ -279,7 +277,7 @@ switch (opcao2)
                 break
                                                 
                 case 2:
-                codigoCadastro
+                codigoCadastro(cod)
                 console.clear()
                 console.log("===========================================================")
                 console.log("|                        Serviços                         |")
@@ -294,8 +292,7 @@ switch (opcao2)
                 break
                 
                 case 3:
-                codigoCadastro        
-            
+                codigoCadastro(cod)
                 console.clear()
                 console.log("===========================================================")
                 console.log("|                        Serviços                         |")
@@ -305,6 +302,8 @@ switch (opcao2)
                 console.log("|                                                         |")
                 console.log("|                                                         |")
                 console.log("===========================================================")
+                thigas = readline.question("aperte enter para continuar...")
+                opcao2 = 0
                 break
                            
                                         
